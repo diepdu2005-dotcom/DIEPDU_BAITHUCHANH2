@@ -1,7 +1,7 @@
 # Tên dự án / Bài tập
-Bài 1: Khởi tạo Clock và Bật sáng LED 
-Bài 2: Nhấp nháy LED bằng thanh ghi ODR/ BSRR
-Bài 3: Điều khiển LED bằng Nút nhấn sử dụng Ngắt ngoài 
+1. Bài 1: Khởi tạo Clock và Bật sáng LED
+2. Bài 2: Nhấp nháy LED bằng thanh ghi ODR/ BSRR
+3. Bài 3: Điều khiển LED bằng Nút nhấn sử dụng Ngắt ngoài 
 
 ---
 
@@ -35,3 +35,4 @@ Bài 3: Điều khiển LED bằng Nút nhấn sử dụng Ngắt ngoài
 3. bài 3: https://youtube.com/shorts/I4Yk1hnzm48
 
 (Dán link YouTube video demo sản phẩm tại đây)
+
