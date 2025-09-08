@@ -1,0 +1,23 @@
+#include "stm32f10x.h"
+void GPIO_Init(void) {
+	// SETUP CLOCK FOR GPIOC (BIT 4 IN RCC_APB2NER)
+   /* Bit 4: I/O port clock enable
+             0:disabled
+			 1:enabled
+	 use "OR" operator to set up clock for GPIOC
+     '1' shift left 4 bits */
+	RCC->APB2ENR |= (1 << 4);
+	
+	// PC6 is pin 6, located in CRL (pins 0-7)
+	//Bit positions: MODE6 = bits 24-45, CNF6 = bits 26-27
+	
+	//Clear previous configuration bits for PC6
+	GPIOC->CRL &= ~(0xF << 24); // Clear 4 bits MODE6 and CNF6
+	
+	//PC6 configuration is output push-pull, speed 10MHz
+	//MODE6 = 01(output mode, max speed 10MHz)
+	//CNF6 = 00 (General purpose output push-pull)
+	GPIOC->CRL |= (0x1 << 24); //set MODE6[1:0] =01
+	GPIOC->CRL &= ~(0x1 << 26); //set CNF6[1:0] = 00
+}
+
