@@ -1,4 +1,11 @@
 #include "stm32f10x.h"
+/* RCC_APB2ENR : 0x40021018
+   GPIOC_CRL   : 0x40011000
+   GPIOC_ODR   : 0x4001100C
+*/
+/*  Vì truy cập thanh ghi bằng struct đã định nghĩa sẵn trong CMSIS nên không cần định nghĩa mấy thanh ghi trên,
+    chỉ cần tìm vị trí bit của PC6 và chế độ mà đề bài yêu cầu.
+
 void GPIO_Init(void) {
 	// SETUP CLOCK FOR GPIOC (BIT 4 IN RCC_APB2NER)
    /* Bit 4: I/O port clock enable
@@ -20,4 +27,29 @@ void GPIO_Init(void) {
 	GPIOC->CRL |= (0x1 << 24); //set MODE6[1:0] =01
 	GPIOC->CRL &= ~(0x1 << 26); //set CNF6[1:0] = 00
 }
+
+void LED_ON(void){
+	// Clear bit 6 trong ODR
+	GPIOC->ODR &= ~(1 << 6);
+	
+	//Or use BRR to reset bit
+	//GPIOC->BRR = (1 << 6); PC6 is pin 6 --> bit 6
+}
+
+void LED_OFF(void){
+	// Set bit 6 in ODR 
+	GPIOC->ODR |= (1 << 6);
+	
+	// Use BSRR to set bit
+	//GPIOC->BSRR = (1 << 6);
+}
+int main(void){
+	GPIO_Init();
+	while(1){
+		LED_ON();
+		//LED_OFF();
+	}
+}
+
+
 
