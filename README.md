@@ -33,6 +33,8 @@
 1. bài 1: https://youtube.com/shorts/kEydRuYRL3M
 2. bài 2: https://youtube.com/shorts/jIJvIS1lmOw
 3. bài 3: https://youtube.com/shorts/I4Yk1hnzm48
+4. bài 3.1: https://youtube.com/shorts/72Qh4Ldj7To
 
 (Dán link YouTube video demo sản phẩm tại đây)
+
 
