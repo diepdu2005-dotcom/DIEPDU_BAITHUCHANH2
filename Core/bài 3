@@ -42,18 +42,15 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t ledpin = 0;//biến lưu trạng thái LED 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
-//kiểm tra chân 11 xem có đang được nhấn không
-//nếu trước đó ledpin = 0 thì thành '1' và ngược lại
+//kiểm tra chân 14 xem có đang được nhấn không
+  if (GPIO_Pin == GPIO_PIN_14){
+		if ((HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14))== GPIO_PIN_RESET){
 
-  if (GPIO_Pin == GPIO_PIN_11){
-		if ((HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_11))== GPIO_PIN_RESET){
-			  ledpin = !ledpin;
-     //nếu ledpin == 1 thì reset chân PC6: LED sáng
-     //nếu ledpin == 0 thì set chân PC6: LED tắt
-			  if( ledpin){
+     //nếu nút nhấn được nhấn thì reset chân PC6: LED sáng
+     //nếu nút nhấn được thả thì set chân PC6: LED tắt
+
 			     HAL_GPIO_WritePin(GPIOC,GPIO_PIN_6,GPIO_PIN_RESET);
 			  }else{
 		       HAL_GPIO_WritePin(GPIOC,GPIO_PIN_6,GPIO_PIN_SET);
@@ -61,7 +58,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 		} 
 	}
  }
-}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
