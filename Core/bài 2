@@ -3,6 +3,8 @@
 #define RCC_APB2ENR   (*(volatile unsigned int*)0x40021018)
 #define GPIOC_CRL     (*(volatile unsigned int*)0x40011000)
 #define GPIOC_ODR     (*(volatile unsigned int*)0x4001100C)
+#define GPIOC_BSRR    (*(volatile unsigned int*)0x40011010)
+#define GPIOC_BRR     (*(volatile unsigned int*)0x40011014)
 
 void GPIO_Init(void) {
 	// SETUP CLOCK FOR GPIOC (BIT 4 IN RCC_APB2NER)
