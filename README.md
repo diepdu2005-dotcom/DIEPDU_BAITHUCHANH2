@@ -10,8 +10,6 @@
 |STT| | Họ và Tên    |
 |---|
 | 1 | | Diệp Văn Du |
-| 2 | | Đặng Thị Hồng Chinh   |
-| 3 | | Vi Văn Huyện     |
 
 ---
 
